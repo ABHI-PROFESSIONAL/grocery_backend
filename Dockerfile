@@ -1,5 +1,5 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM openjdk:17
 VOLUME /tmp
-COPY target/*.jar grocery__backend-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","/grocery__backend-0.0.1-SNAPSHOT.jar"]
-EXPOSE 8080
+ADD target/grocery__backend.jar grocery__backend.jar
+ENTRYPOINT ["java","-jar","/grocery__backend.jar"]
+EXPOSE 8082
